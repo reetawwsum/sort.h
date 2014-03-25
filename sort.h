@@ -19,3 +19,16 @@ void insertionSort(int *a, int n){
 		}
 	}
 }
+
+//Selection Sort
+void selectionSort(int *a, int n){
+	int i, j, smallest;
+	for (i = 0; i < n-1; i++){
+		smallest = i;
+		for (j = i + 1; j < n; j++){
+			if (a[j] < a[smallest])
+				smallest = j;
+		}
+		swap(&a[i], &a[smallest]);
+	}
+}
