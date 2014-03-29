@@ -9,8 +9,9 @@ int main(void){
 	a = (int *) malloc (length * sizeof(int));
 	for (i = 0; i < length; i++)
 		scanf("%d", &a[i]);
-	selectionSort(a, length);
-	for (i = 0; i < length; i++)
-		printf("%d ", a[i]);
+	//insertionSort(a, length);
+	//selectionSort(a, length);
+	mergeSort(a, 0, length-1);
+	printElementsInArray(a, length);
 	return 0;
 }
