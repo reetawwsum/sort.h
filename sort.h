@@ -1,7 +1,8 @@
-/***************************************/
-/***********Sorting Algorithms**********/
-/***************************************/
+/**********************************************************/
+/***********Sorting Algorithms*****************************/
+/**********************************************************/
 
+//Helping Functions
 void swap(int *x, int *y){
 	int temp = *x;
 	*x = *y;
@@ -13,6 +14,9 @@ void printElementsInArray(int *a, int length){
 	for (i = 0; i < length; i++)
 		printf("%d ", a[i]);
 }
+
+/**********************************************************/
+/**********************************************************/
 
 //Insertion Sort
 void insertionSort(int *a, int n){
@@ -29,6 +33,9 @@ void insertionSort(int *a, int n){
 		}
 	}
 }
+
+/**********************************************************/
+/**********************************************************/
 
 //Selection Sort
 void selectionSort(int *a, int n){
@@ -47,10 +54,13 @@ void selectionSort(int *a, int n){
 	}
 }
 
+/**********************************************************/
+/**********************************************************/
+
 //Merge Sort
 void merge(int *a, int min, int mid, int max){
 	int i, j, k, m;
-	int *temp = (int *) malloc((max+min) * sizeof(int));
+	int *temp = (int *) malloc((max+min+1) * sizeof(int));
 	j = min;
 	k = mid + 1;
 	for (i = min; j <= mid && k <= max; i++){
@@ -81,4 +91,36 @@ void mergeSort(int *a, int low, int high){
 	printElementsInArray(a, high+1);
 	printf("\n");
 	*/
+}
+
+/**********************************************************/
+/**********************************************************/
+
+//Quick Sort
+int partition(int *a, int p, int r){
+	int x, i, j;
+	x = a[p];
+	i = p;
+	for (j = p+1; j <= r; j++){
+		if (a[j] <= x){
+			i++;
+			swap(&a[i], &a[j]);
+		}
+	}
+	swap(&a[i], &a[p]);
+	return i;
+}
+
+
+void quickSort(int *a, int p, int r){
+	int q;
+	if (p < r){
+		q = partition(a, p, r);
+		quickSort(a, p, q-1);
+		quickSort(a, q+1, r);
+		/*
+		printElementsInArray(a, r);
+		printf("\n");
+		*/
+	}
 }
