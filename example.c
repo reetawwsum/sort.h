@@ -12,7 +12,8 @@ int main(void){
 	//insertionSort(a, length);
 	//selectionSort(a, length);
 	//mergeSort(a, 0, length-1);
-	quickSort(a, 0, length-1);
+	//quickSort(a, 0, length-1);
+	countingSort(a, length);
 	printElementsInArray(a, length);
 	return 0;
 }
