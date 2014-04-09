@@ -138,7 +138,28 @@ void countingSort(int *a, int n){
 		c[i] = 0;
 	for (i = 0; i < n; i++)
 		c[a[i]]++;
+	/*
+	printElementsInArray(c, k+1);
+	printf("\n");
+	*/
 	for (i = 1; i <= k; i++)
 		while (c[i]--)
 			a[j++] = i;
+}
+
+/**********************************************************/
+/**********************************************************/
+
+//Bubble Sort
+void bubbleSort(int *a, int n){
+	int i, j;
+	for (i = 0; i < n-1; i++)
+		for (j = 0; j < n-i-1; j++){
+			if (a[j] > a[j+1])
+				swap(&a[j], &a[j+1]);
+			/*
+			printElementsInArray(a, n);
+			printf("\n");
+			*/
+		}
 }

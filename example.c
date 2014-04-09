@@ -13,7 +13,8 @@ int main(void){
 	//selectionSort(a, length);
 	//mergeSort(a, 0, length-1);
 	//quickSort(a, 0, length-1);
-	countingSort(a, length);
+	//countingSort(a, length);
+	bubbleSort(a, length);
 	printElementsInArray(a, length);
 	return 0;
 }
