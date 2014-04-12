@@ -1,4 +1,4 @@
-#sort.h **(v0.7)**
+#sort.h **(v0.7.1)**
 Header file containing all **Sorting Algorithms**.
 
 ##How to use

@@ -172,11 +172,11 @@ void maxHeapify(int *a, int n, int i){
 	int largest;
 	int l = 2*i + 1;
 	int r = 2*i + 2;
-	if ((l <= n) && a[l] > a[i])
+	if ((l <= n) && (a[l] > a[i]))
 		largest = l;
 	else
 		largest = i;
-	if ((r <= n) && a[r] > a[i])
+	if ((r <= n) && (a[r] > a[largest]))
 		largest = r;
 	if (largest != i){
 		swap(&a[i], &a[largest]);
@@ -192,10 +192,15 @@ void buildMaxHeap(int *a, int n){
 
 void heapSort(int *a, int n){
 	int i;
-	buildMaxHeap(a, n);
-	for (i = n-1; i > 0; i--){
+	int heapSize = n-1;
+	buildMaxHeap(a, heapSize);
+	for (i = heapSize; i > 0; i--){
 		swap(&a[0], &a[i]);
-		n--;
-		maxHeapify(a, n, 1);
+		heapSize--;
+		maxHeapify(a, heapSize, 0);
+		/*
+		printElementsInArray(a, n);
+		printf("\n");
+		*/
 	}
 }

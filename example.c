@@ -15,7 +15,7 @@ int main(void){
 	//quickSort(a, 0, length-1);
 	//countingSort(a, length);
 	//bubbleSort(a, length);
-	heapSort(a, length-1);
+	heapSort(a, length);
 	printElementsInArray(a, length);
 	return 0;
 }
