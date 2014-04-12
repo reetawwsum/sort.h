@@ -19,4 +19,3 @@ int main(void){
 
 ##Coded by *Reet Awwsum*
 >NOTE: This version contains **Insertion Sort**, **Selection Sort**, **Merge Sort**, **Quick Sort**, **Counting Sort**, **Bubble Sort** and **Heap Sort**.
-
