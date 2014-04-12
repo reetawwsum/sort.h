@@ -14,7 +14,8 @@ int main(void){
 	//mergeSort(a, 0, length-1);
 	//quickSort(a, 0, length-1);
 	//countingSort(a, length);
-	bubbleSort(a, length);
+	//bubbleSort(a, length);
+	heapSort(a, length-1);
 	printElementsInArray(a, length);
 	return 0;
 }

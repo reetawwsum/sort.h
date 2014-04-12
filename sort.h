@@ -163,3 +163,39 @@ void bubbleSort(int *a, int n){
 			*/
 		}
 }
+
+/**********************************************************/
+/**********************************************************/
+
+//Heap Sort
+void maxHeapify(int *a, int n, int i){
+	int largest;
+	int l = 2*i + 1;
+	int r = 2*i + 2;
+	if ((l <= n) && a[l] > a[i])
+		largest = l;
+	else
+		largest = i;
+	if ((r <= n) && a[r] > a[i])
+		largest = r;
+	if (largest != i){
+		swap(&a[i], &a[largest]);
+		maxHeapify(a, n, largest);
+	}
+}
+
+void buildMaxHeap(int *a, int n){
+	int i;
+	for (i = n/2; i >= 0; i--)
+		maxHeapify(a, n, i);
+}
+
+void heapSort(int *a, int n){
+	int i;
+	buildMaxHeap(a, n);
+	for (i = n-1; i > 0; i--){
+		swap(&a[0], &a[i]);
+		n--;
+		maxHeapify(a, n, 1);
+	}
+}
