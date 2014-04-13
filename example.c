@@ -16,7 +16,8 @@ int main(void){
 	//countingSort(a, length);
 	//bubbleSort(a, length);
 	//heapSort(a, length);
-	bucketSort(a, length);
+	//bucketSort(a, length);
+	radixSort(a, length);
 	printElementsInArray(a, length);
 	return 0;
 }

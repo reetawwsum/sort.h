@@ -232,3 +232,28 @@ void countingSort(int *a, int n){
 	for (i = 0; i < n; i++)
 		a[i] = b[i];
 }
+
+/**********************************************************/
+/**********************************************************/
+
+void radixSort(int *a, int n){
+	int i, bucket[10], maxVal = 0, digitPosition = 1;
+	for (i = 0; i < n; i++)
+		maxVal = maxVal > a[i] ? maxVal : a[i];
+	while ((maxVal / digitPosition) > 0){
+		int digitCount[10] = {0};
+		for (i = 0; i < n; i++)
+			digitCount[(a[i] / digitPosition) % 10]++;
+		for (i = 1; i < 10; i++)
+			digitCount[i] += digitCount[i-1];
+		for (i = n-1; i >= 0; i--)
+			bucket[--digitCount[(a[i] / digitPosition) % 10]] = a[i];
+		for (i = 0; i < n; i++)
+			a[i] = bucket[i];
+		digitPosition *= 10;
+		/*
+		printElementsInArray(a, n);
+		printf("\n");
+		*/
+	}
+}
