@@ -1,4 +1,4 @@
-#sort.h **(v0.8)**
+#sort.h **(v0.9)**
 Header file containing all **Sorting Algorithms**.
 
 ##How to use
@@ -18,4 +18,4 @@ int main(void){
 * For testing purposes compile and run **example.c**
 
 ##Coded by *Reet Awwsum*
->NOTE: This version contains **Insertion Sort**, **Selection Sort**, **Merge Sort**, **Quick Sort**, **Counting Sort**, **Bubble Sort**, **Heap Sort** and **Bucket Sort**.
+>NOTE: This version contains **Insertion Sort**, **Selection Sort**, **Merge Sort**, **Quick Sort**, **Counting Sort**, **Bubble Sort**, **Heap Sort**, **Bucket Sort** and **Radix Sort**.
