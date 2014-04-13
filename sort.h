@@ -128,8 +128,8 @@ void quickSort(int *a, int p, int r){
 /**********************************************************/
 /**********************************************************/
 
-//Counting Sort
-void countingSort(int *a, int n){
+//Unknown Sort
+void unknownSort(int *a, int n){
 	int i, k = 0, j = 0;
 	for (i = 0; i < n; i++)
 		k = a[i] > k ? a[i] : k;
@@ -203,4 +203,32 @@ void heapSort(int *a, int n){
 		printf("\n");
 		*/
 	}
+}
+
+/**********************************************************/
+/**********************************************************/
+
+//Counting Sort
+void countingSort(int *a, int n){
+	int i, k = 0;
+	for (i = 0; i < n; i++)
+		k = k > a[i] ? k : a[i];
+	int *c = (int *) malloc((k+1) * sizeof(int));
+	int *b = (int *) malloc(n * sizeof(int));
+	for (i = 0; i <= k; i++)
+		c[i] = 0;
+	for (i = 0; i < n; i++)
+		c[a[i]]++;
+	for (i = 1; i <= k; i++)
+		c[i] = c[i] + c[i-1];
+	/*
+	printElementsInArray(c, k+1);
+	printf("\n");
+	*/
+	for (i = n-1; i >= 0; i--){
+		b[c[a[i]]-1] = a[i];
+		c[a[i]]--;
+	}
+	for (i = 0; i < n; i++)
+		a[i] = b[i];
 }
