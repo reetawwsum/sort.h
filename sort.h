@@ -236,6 +236,7 @@ void countingSort(int *a, int n){
 /**********************************************************/
 /**********************************************************/
 
+//Radix Sort
 void radixSort(int *a, int n){
 	int i, bucket[10], maxVal = 0, digitPosition = 1;
 	for (i = 0; i < n; i++)
