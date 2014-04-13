@@ -128,8 +128,8 @@ void quickSort(int *a, int p, int r){
 /**********************************************************/
 /**********************************************************/
 
-//Unknown Sort
-void unknownSort(int *a, int n){
+//Bucket Sort
+void bucketSort(int *a, int n){
 	int i, k = 0, j = 0;
 	for (i = 0; i < n; i++)
 		k = a[i] > k ? a[i] : k;
